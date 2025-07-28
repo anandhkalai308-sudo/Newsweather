@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodTech Global</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #011b29;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(to right, #83a4d4, #07868d);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero img {
+      max-width: 250px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    /* Search */
+    #searchBar {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 12px 20px;
+      width: 90%;
+      max-width: 350px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .country-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .country-card {
+      background-color: white;
+      border-radius: 10px;
+      margin: 15px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .country-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .country-card h2 {
+      margin: 15px 0 10px;
+    }
+
+    .news-intro, .country-card a {
+      font-size: 14px;
+      margin: 5px 0;
+      display: block;
+      color: #01080f;
+      text-decoration: none;
+    }
+
+    /* Weather */
+    .weather-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005f87;
+    }
+
+    .weather-result {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* Contact */
+    .contact p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">
+      <img src="CODTECH.png" alt="Logo">
+      <span>CODTECH Global</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#news">📰 Search News</a>
+      <a href="#weather">🌦️Weather</a>
+      <a href="#about">🙎🏻About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero / Intro -->
+  <div class="hero" id="home">
+    <h1>Welcome to CODTECH Global</h1>
+    <p>Your single hub for international news & weather updates</p>
+    <img src="CODTECH.png" alt="CodTech Banner">
+  </div>
+
+  <!-- News Section -->
+  <section id="news">
+    <h2 class="section-title">📰 Country News</h2>
+    <input type="text" id="searchBar" placeholder="Search news by country (e.g., India, USA)">
+
+  <!-- News Cards -->
+  <div class="country-list" id="countryList">
+    <div class="country-card" data-country="india">
+      <img src="images.jfif" alt="India News">
+      <h2>India</h2>
+      <p> </p>
+      <a href="https://www.hindustantimes.com" target="_blank">Visit Hindustan Times</a>
+      <a href="https://timesofindia.indiatimes.com" target="_blank">Times of India</a>
+      <a href="https://www.sportskeeda.com/" target="_blank">Sportskeeda</a>
+    </div>
+
+    <div class="country-card" data-country="usa">
+      <img src="download.png" alt="USA News">
+      <h2>USA</h2>
+      <p> </p>
+      <a href="https://www.nytimes.com" target="_blank">Visit New York Times</a>
+      <a href="https://edition.cnn.com" target="_blank">CNN</a>
+      <a href="https://www.foxsports.com/" target="_blank">Fox Sports</a>
+    </div>
+
+    <div class="country-card" data-country="uk">
+      <img src="images (1).jfif" alt="UK News">
+      <h2>UK</h2>
+      <p> </p>
+      <a href="https://www.bbc.com/news" target="_blank">Visit BBC News</a>
+      <a href="https://www.sonysportsnetwork.com/" target="_blank">Sony Sports Network</a>
+      <a href="https://www.telegraph.co.uk" target="_blank">The Telegraph</a>
+    </div>
+
+    <div class="country-card" data-country="australia">
+      <img src="download.jfif" alt="Australia News">
+      <h2>Australia</h2>
+      <p> </p>
+      <a href="https://www.abc.net.au/news" target="_blank">Visit ABC News</a>
+       <a href="https://www.smh.com.au" target="_blank">Sydney Morning Herald</a>
+        <a href="https://www.theaustralian.com.au/sport" target="_blank">Australian Sports</a>
+
+    </div>
+  </div>
+
+  </section>
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <h2 class="section-title">Check Weather</h2>
+    <div class="container">
+    <h1>🌦️ Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div class="weather-result" id="weatherResult"></div>
+  </div>
+
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">🙎🏻About Us</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      CodTech Global combines real-time news and weather in a single platform. Stay updated with top headlines and accurate forecasts, powered by OpenWeather and top news sources.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact">
+      <p>Email: info@codtechglobal.com</p>
+      <p>Phone: +91-9876543210</p>
+      <p>Address: CodTech HQ, hyderabad, India</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 CodTech Global. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const apiKey = "667bec42163ea0079d5f6882eabdbd38"; // Replace with your valid key
+
+    function getWeather() {
+      const city = document.getElementById("cityInput").value.trim();
+      const resultDiv = document.getElementById("weatherResult");
+
+      if (city === "") {
+        resultDiv.innerHTML = "Please enter a city name.";
+        return;
+      }
+
+      resultDiv.innerHTML = "Fetching weather data...";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("City not found");
+          }
+          return response.json();
+        })
+        .then(data => {
+          const temp = data.main.temp;
+          const desc = data.weather[0].description;
+          const humidity = data.main.humidity;
+          const icon = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+          resultDiv.innerHTML = `
+            <img src="${iconUrl}" alt="Weather Icon">
+            <p><strong>Temperature:</strong> ${temp} °C</p>
+            <p><strong>Condition:</strong> ${desc}</p>
+            <p><strong>Humidity:</strong> ${humidity}%</p>
+          `;
+        })
+        .catch(error => {
+          resultDiv.innerHTML = "Error: " + error.message;
+        });
+    }
+
+    // News search logic
+    const searchBar = document.getElementById("searchBar");
+    const cards = document.querySelectorAll(".country-card");
+    const countryList = document.getElementById("countryList");
+
+    searchBar.addEventListener("input", () => {
+      const query = searchBar.value.trim().toLowerCase();
+      let anyVisible = false;
+
+      cards.forEach(card => {
+        const country = card.getAttribute("data-country");
+        if (country.includes(query) && query !== "") {
+          card.style.display = "block";
+          anyVisible = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (query === "") {
+        cards.forEach(card => card.style.display = "block");
+      }
+
+      if (!anyVisible && query !== "") {
+        countryList.innerHTML = `<p style="text-align:center;">No news found for "<strong>${query}</strong>".</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
